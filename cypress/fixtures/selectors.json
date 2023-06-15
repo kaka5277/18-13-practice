@@ -1,0 +1,17 @@
+{
+  "unames": "admin123",
+  "pwd": "123456",
+  "customerListBtn": "button[ng-class='btnClass3']",
+  "fNameField":"input[ng-model='fName']",
+  "lNameField":"input[ng-model='lName']",
+  "pCodeField":"input[ng-model='postCd']",
+  "fName":"John",
+  "lName":"Gomez",
+  "postCd":"SK3 7BA",
+  "CreateBtn":"button[type='submit']",
+  "customerList":"#userSelect",
+  "currencyList":"#currency",
+  "currency":"Pound",
+  "searchField":"input[ng-model='searchCustomer']",
+  "deleteBtn":"[ng-click='deleteCust(cust)']"
+}

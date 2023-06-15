@@ -1,0 +1,10 @@
+？只能找support下文件夹里的.ts文件，放在其他目录出错
+
+Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
+https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
+
+.feature在e2e文件夹下或e2e下某个文件夹下，都可以
+.ts文件：默认Cypress-Cucumber插件在搜索步骤定义文件时，对文件的位置有一些默认的假设和约定。
+默认情况下，它会在cypress/support/step_definitions目录下搜索步骤定义文件。
+还差？在cypress中，配置
+step_definitions: 'e2e/step_definitions', // 步骤定义文件的相对路径

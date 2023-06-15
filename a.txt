@@ -1,11 +1,12 @@
 ？只能找support下文件夹里的.ts文件，放在其他目录出错
 不一定得在support下，
-package.json,,
+总结：1
+package.json:
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "step_definitions": "cypress/e2e"
   }
-  可以放别的目录下，但.feature和.ts的文件，必须同名
+  总结：2.可以放别的目录下，但.feature和.ts的文件/.ts的父级文件夹，必须同名，同名的在同一目录
 
 Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
 https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
@@ -13,3 +14,4 @@ https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVr
 .feature在e2e文件夹下或e2e下某个文件夹下，都可以
 .ts文件：默认Cypress-Cucumber插件在搜索步骤定义文件时，对文件的位置有一些默认的假设和约定。
 默认情况下，它会在cypress/support/step_definitions目录下搜索步骤定义文件。
+本地文件夹:18-13?copy-setp-ok

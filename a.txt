@@ -1,4 +1,6 @@
-？只能找support下文件夹里的.ts文件，放在其他目录出错
+逐渐恢复：youtu中的selectors.json数据,commands.ts函数,ts函数，第13集
+
+ok:？只能找support下文件夹里的.ts文件，放在其他目录出错
 不一定得在support下，
 总结：1
 package.json:

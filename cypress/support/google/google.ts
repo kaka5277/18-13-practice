@@ -11,3 +11,7 @@ Then("I should see a search bar", () => {
 Then("Start to type your And step here", () => {
 	cy.get('#APjFqb').type('ts5+cucumber+cy latest {enter}');
 });
+Then('Title should include "Google"',()=>{
+   //cy.url().should('include','google')
+    cy.get('head title').contains('Google')
+})

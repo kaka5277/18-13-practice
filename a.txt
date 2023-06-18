@@ -1,6 +1,7 @@
+cucumber+ts+cypress 练习:
+.feature,.ts都是support文件夹下
 
-做为模版，不再添加新的东西
-对应的远程仓库是：https://github.com/kaka5277/ts5-cy12-cucumber.git
+对应的远程仓库是：
 ok:？只能找support下文件夹里的.ts文件，放在其他目录出错
 不一定得在support下，
 总结：1
@@ -10,11 +11,11 @@ package.json:
     "step_definitions": "cypress/e2e"
   }
   总结：2.可以放别的目录下，但.feature和.ts的文件/.ts的父级文件夹，必须同名，同名的在同一目录
-
+参考:
 Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
 https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
 
 .feature在e2e文件夹下或e2e下某个文件夹下，都可以
 .ts文件：默认Cypress-Cucumber插件在搜索步骤定义文件时，对文件的位置有一些默认的假设和约定。
 默认情况下，它会在cypress/support/step_definitions目录下搜索步骤定义文件。
-本地文件夹:18-13?copy-setp-ok
+本地文件夹:18-13 practice

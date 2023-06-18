@@ -2,7 +2,13 @@ cucumber+ts+cypress 练习:
 .feature,.ts都是support文件夹下
 
 对应的远程仓库是：https://github.com/kaka5277/ts-cypress-cucumber-practice
-还是旧的名字：https://github.com/kaka5277/18-13-practice.git
+?还是旧的名字：https://github.com/kaka5277/18-13-practice.git
+github对应的仓库名改了，git push后，提示：
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/kaka5277/ts-cypress-cucumber-practice.git
+To https://github.com/kaka5277/18-13-practice.git
+终端输入:git remote set-url origin https://github.com/kaka5277/ts-cypress-cucumber-practice.git
+此时，git remote -v:就是新的仓库名url了
 ok:？只能找support下文件夹里的.ts文件，放在其他目录出错
 不一定得在support下，
 总结：1

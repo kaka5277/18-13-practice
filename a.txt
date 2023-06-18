@@ -1,5 +1,6 @@
-逐渐恢复：youtu中的selectors.json数据,commands.ts函数,ts函数，第13集
 
+做为模版，不再添加新的东西
+对应的远程仓库是：https://github.com/kaka5277/ts5-cy12-cucumber.git
 ok:？只能找support下文件夹里的.ts文件，放在其他目录出错
 不一定得在support下，
 总结：1

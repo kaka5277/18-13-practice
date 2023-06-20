@@ -26,3 +26,6 @@ https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVr
 .ts文件：默认Cypress-Cucumber插件在搜索步骤定义文件时，对文件的位置有一些默认的假设和约定。
 默认情况下，它会在cypress/support/step_definitions目录下搜索步骤定义文件。
 本地mac电脑 desk->auto-momo-同名文件夹
+断言某个元素不存在的2种写法:
+ cy.contains(sel.fName).should('not.exist')
+cy.get('table').should('not.contain', sel.fName)  

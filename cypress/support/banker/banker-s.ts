@@ -95,7 +95,8 @@ When(/^I search for the user$/, () => {
 Then(/^I click on the delete button$/, () => {
     cy.fixture('selectors').then(sel => {
        cy.clickElement(sel.deleteBtn)
-       cy.contains(sel.fName).should('not.exist')
+       //cy.contains(sel.fName).should('not.exist')
+       cy.get('table').should('not.contain', sel.fName)    
     })
 });
 

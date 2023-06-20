@@ -1,6 +1,6 @@
 cucumber+ts+cypress 练习:
 .feature,.ts都是support文件夹下
-参考:18集
+banker练习 参考:18集
 Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
 https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
 

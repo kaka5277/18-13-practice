@@ -39,12 +39,42 @@ Then(/^I click on create customer button and see alert$/, () => {
         cy.clickElement(sel.CreateBtn)
     })
     cy.on('window:alert', message => {     
+        expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+            .to.contains(message)
+    })
+});
+
+
+When(/^I click on open account button$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.createAccountBtn)
+    })
+});
+
+When(/^I select the customer name$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.selectValue(sel.customerList,sel.fName + ' ' + sel.lName)
+    })
+});
+
+When(/^I select the currency$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.selectValue(sel.currencyList,sel.currency)
+    })
+});
+
+Then(/^I click on the process button and should see alter$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.CreateBtn)
+    })
+    cy.on('window:alert', message => {     
         // expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
         //     .to.contains(message)
-        //expect(message).to.equal('Customer added successfully with customer id :6')
-       // expect(message).to.include('Customer added successfully')
-        expect(message).to.contains('Customer added successfully')
+       // expect(message).to.equal('Account created successfully with account Number :1016')
+        expect(message).to.include('Account created successfully')
+        //expect(message).to.contains('Account created successfully')
     })
+
 });
 
 

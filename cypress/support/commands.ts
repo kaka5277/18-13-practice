@@ -44,3 +44,7 @@ Cypress.Commands.add('typeAtext', (field, text) => {
     cy.get(field).should('exist').type(text)
 })
 
+Cypress.Commands.add('selectValue',(field,value)=>{
+    cy.get(field).select(value)
+})
+

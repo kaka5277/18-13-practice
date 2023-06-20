@@ -12,3 +12,8 @@ delete an account
         And I type in the post code
         Then I click on create customer button and see alert
        
+        When I click on open account button
+        And  I select the customer name
+        And I select the currency
+        Then I click on the process button and should see alter
+        

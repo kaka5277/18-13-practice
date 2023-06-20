@@ -35,16 +35,18 @@ When(/^I type in the post code$/, () => {
     })
 });
 
-Then(/^I click on create customer button and see alert$/, () => {
+Then(/^I click on create customer button$/, () => {
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.CreateBtn)
     })
+});
+
+Then(/^I should see an alert$/, () => {
     cy.on('window:alert', message => {
         expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
             .to.contains(message)
     })
 });
-
 
 When(/^I click on open account button$/, () => {
     cy.fixture('selectors').then(sel => {
@@ -64,19 +66,18 @@ When(/^I select the currency$/, () => {
     })
 });
 
-Then(/^I click on the process button and should see alert$/, () => {
+Then(/^I click on the process button$/, () => {
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.CreateBtn)
     })
-    cy.on('window:alert', message => {
-        // expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
-        //     .to.contains(message)
-        // expect(message).to.equal('Account created successfully with account Number :1016')
-        expect(message).to.include('Account created successfully')
-        //expect(message).to.contains('Account created successfully')
-    })
-
 });
+//同样的该函数名，上面已出现，此处不写，否则会出错
+// Then(/^I should see an alert$/, () => {
+//     cy.on('window:alert', message => {
+//         expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+//             .to.contains(message)
+//     })
+// });
 
 
 When(/^I click on the customers button$/, () => {
@@ -94,9 +95,9 @@ When(/^I search for the user$/, () => {
 
 Then(/^I click on the delete button$/, () => {
     cy.fixture('selectors').then(sel => {
-       cy.clickElement(sel.deleteBtn)
-       //cy.contains(sel.fName).should('not.exist')
-       cy.get('table').should('not.contain', sel.fName)    
+        cy.clickElement(sel.deleteBtn)
+        //cy.contains(sel.fName).should('not.exist')
+        cy.get('table').should('not.contain', sel.fName)
     })
 });
 

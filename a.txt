@@ -1,6 +1,8 @@
 cucumber+ts+cypress 练习:
 .feature,.ts都是support文件夹下
-banker练习 参考:18集
+banker-login练习:用到fixture,自定义commands.add,stub,alert message,declare
+功能:Manager login->分别点击3个功能：add customer info->create account:生成Account number->search 用户列表->删除：断言：不存在该用户
+参考:18集
 Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
 https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
 

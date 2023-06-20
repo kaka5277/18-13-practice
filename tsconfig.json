@@ -3,6 +3,7 @@
         "esModuleInterop": true,
         "moduleResolution": "node16",
         //即使node -v是16,用nodenext也可以.nvm use 18后，node16也可以
+        //之后不改动这里
         "target": "es5",
         "lib": [
             "es5",

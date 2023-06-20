@@ -22,7 +22,8 @@ export default defineConfig({
     e2e: {
         baseUrl: "https://google.com",
         specPattern: "**/*.feature",
-        setupNodeEvents,
+        //viewportWidth:800,
+       // viewportHeight:400,
+         setupNodeEvents,
     },
-
 });

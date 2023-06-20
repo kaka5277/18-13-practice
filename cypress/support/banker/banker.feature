@@ -18,6 +18,7 @@ delete an account
         And I select the currency
         And I click on the process button
         Then I shoule see the account number
+        
         When I click on the customers button
         And  I search for the user
         Then I click on the delete button

@@ -15,5 +15,9 @@ delete an account
         When I click on open account button
         And  I select the customer name
         And I select the currency
-        Then I click on the process button and should see alter
+        Then I click on the process button and should see alert
+
+        When I click on the customers button
+        And  I search for the user
+        Then I click on the delete button
         

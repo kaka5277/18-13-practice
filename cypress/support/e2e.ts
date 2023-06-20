@@ -20,3 +20,11 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
+declare global {
+    namespace Cypress {
+        interface Chainable {
+            clickElement(element: string): Chainable<void>
+            typeAtext(field: string, text: string): Chainable<void>
+        }
+    }
+}

@@ -35,3 +35,12 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('clickElement', (element) => {
+    cy.get(element).should('exist').click()
+})
+
+Cypress.Commands.add('typeAtext', (field, text) => {
+    cy.get(field).should('exist').type(text)
+})
+

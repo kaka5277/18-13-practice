@@ -87,13 +87,15 @@ When(/^I click on the customers button$/, () => {
 
 When(/^I search for the user$/, () => {
     cy.fixture('selectors').then(sel => {
-        cy.typeAtext(sel.searchField, sel.fName)
+        cy.typeAtext(sel.searchField, sel.lName)
+        cy.contains(sel.fName).should('be.exist')
     })
 });
 
 Then(/^I click on the delete button$/, () => {
     cy.fixture('selectors').then(sel => {
-        cy.clickElement(sel.deleteBtn)
+       cy.clickElement(sel.deleteBtn)
+       cy.contains(sel.fName).should('not.exist')
     })
 });
 

@@ -11,13 +11,13 @@ delete an account
         And I type in the last name
         And I type in the post code
         Then I click on create customer button
-        Then I should see an alert1
+        Then I should see profile alert
        
         When I click on open account button
         And  I select the customer name
         And I select the currency
         Then I click on the process button
-        Then I should see an alert2
+        Then I should see account alert
 
         When I click on the customers button
         And  I search for the user

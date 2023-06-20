@@ -1,5 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
+let msg;
 Given(/^I am on the bank app$/, () => {
     cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
 });
@@ -11,6 +12,8 @@ When(/^I click on the bank login button$/, () => {
 });
 
 When(/^I click on add customer button$/, () => {
+    msg=cy.stub()
+    cy.on('window:alert',msg)
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.addCustomeBtn)
     })
@@ -41,12 +44,14 @@ Then(/^I click on create customer button$/, () => {
     })
 });
 
-Then(/^I should see an alert1$/, () => {
+Then(/^I should see profile alert$/, () => {
     // cy.on('window:alert', message => {
     //     expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
     //         .to.contains(message)
     // })
-    cy.HandleSuccessAlert('Customer added successfully with customer id :6')
+    // expect(msg).to.have.been.calledWith('Customer added successfully with customer id :6')
+    // cy.HandleSuccessAlert('Customer added successfully with customer id :6')
+    cy.HandleSuccessAlert(msg,'Customer added successfully with customer id :6')
 });
 
 When(/^I click on open account button$/, () => {
@@ -72,13 +77,13 @@ Then(/^I click on the process button$/, () => {
         cy.clickElement(sel.CreateBtn)
     })
 });
-//同样的该函数名，上面已出现，此处不写，否则会出错.分2个函数名:
-Then(/^I should see an alert2$/, () => {
+//同样的该函数名，上面已出现，此处不写，否则会出错.此时也可以：分2个函数名:
+Then(/^I should see account alert$/, () => {
     // cy.on('window:alert', message => {
     //     expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
     //         .to.contains(message)
     // })
-    cy.HandleSuccessAlert('Account created successfully with account Number :1016')
+    cy.HandleSuccessAlert(msg,'Account created successfully with account Number :1016')
 });
 
 

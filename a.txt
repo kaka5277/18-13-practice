@@ -1,5 +1,8 @@
 cucumber+ts+cypress 练习:
 .feature,.ts都是support文件夹下
+参考:18集
+Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
+https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
 
 对应的远程仓库是：https://github.com/kaka5277/ts-cypress-cucumber-practice
 ?还是旧的名字：https://github.com/kaka5277/18-13-practice.git
@@ -18,9 +21,6 @@ package.json:
     "step_definitions": "cypress/e2e"
   }
   总结：2.可以放别的目录下，但.feature和.ts的文件/.ts的父级文件夹，必须同名，同名的在同一目录
-参考:
-Cypress, TypeScript, Cucumber, and Browserstack Walkthrough
-https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVrLDp&index=1
 
 .feature在e2e文件夹下或e2e下某个文件夹下，都可以
 .ts文件：默认Cypress-Cucumber插件在搜索步骤定义文件时，对文件的位置有一些默认的假设和约定。
@@ -45,3 +45,4 @@ Then(/^I should see an alert1$/, () => {
 Then(/^I should see an alert2$/, () => {
     cy.HandleSuccessAlert('Account created successfully with account Number :1016')
 });
+参考第14集:配置stub,HandleSuccessAlert函数(stub,message)..ts函数内,分2个调用alert text

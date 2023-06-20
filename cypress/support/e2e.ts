@@ -26,7 +26,7 @@ declare global {
             clickElement(element: string): Chainable<void>
             typeAtext(field: string, text: string): Chainable<void>
             selectValue(field: string, value: string): Chainable<void>
-            HandleSuccessAlert(message:string): Chainable<void>
+            HandleSuccessAlert(stub:void,message:string): Chainable<void>
         }
     }
 }

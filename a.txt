@@ -30,14 +30,14 @@ https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVr
  cy.contains(sel.fName).should('not.exist')
 cy.get('table').should('not.contain', sel.fName)  
 
-封装alert断言函数：commands.ts内:
+封装alert断言函数：commands.ts内:本身没有参数，里面的cy.on有参数message
 Cypress.Commands.add('HandleSuccessAlert',()=>{
     cy.on('window:alert', message => {
         expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
             .to.contains(message)
     })
 })
-
+调用：cy.HandleSuccessAlert(参数)
 Then(/^I should see an alert1$/, () => {
     cy.HandleSuccessAlert('Customer added successfully with customer id :6')
 });

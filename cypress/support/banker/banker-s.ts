@@ -41,11 +41,12 @@ Then(/^I click on create customer button$/, () => {
     })
 });
 
-Then(/^I should see an alert$/, () => {
-    cy.on('window:alert', message => {
-        expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
-            .to.contains(message)
-    })
+Then(/^I should see an alert1$/, () => {
+    // cy.on('window:alert', message => {
+    //     expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+    //         .to.contains(message)
+    // })
+    cy.HandleSuccessAlert('Customer added successfully with customer id :6')
 });
 
 When(/^I click on open account button$/, () => {
@@ -71,13 +72,14 @@ Then(/^I click on the process button$/, () => {
         cy.clickElement(sel.CreateBtn)
     })
 });
-//同样的该函数名，上面已出现，此处不写，否则会出错
-// Then(/^I should see an alert$/, () => {
-//     cy.on('window:alert', message => {
-//         expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
-//             .to.contains(message)
-//     })
-// });
+//同样的该函数名，上面已出现，此处不写，否则会出错.分2个函数名:
+Then(/^I should see an alert2$/, () => {
+    // cy.on('window:alert', message => {
+    //     expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+    //         .to.contains(message)
+    // })
+    cy.HandleSuccessAlert('Account created successfully with account Number :1016')
+});
 
 
 When(/^I click on the customers button$/, () => {

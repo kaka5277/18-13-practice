@@ -29,3 +29,19 @@ https://www.youtube.com/watch?v=GsYOnk1wxLU&list=PLaHZ36CQywdXRl0cTpc6CcSm60clVr
 断言某个元素不存在的2种写法:
  cy.contains(sel.fName).should('not.exist')
 cy.get('table').should('not.contain', sel.fName)  
+
+封装alert断言函数：commands.ts内:
+Cypress.Commands.add('HandleSuccessAlert',()=>{
+    cy.on('window:alert', message => {
+        expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+            .to.contains(message)
+    })
+})
+
+Then(/^I should see an alert1$/, () => {
+    cy.HandleSuccessAlert('Customer added successfully with customer id :6')
+});
+
+Then(/^I should see an alert2$/, () => {
+    cy.HandleSuccessAlert('Account created successfully with account Number :1016')
+});

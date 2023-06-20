@@ -48,3 +48,10 @@ Cypress.Commands.add('selectValue',(field,value)=>{
     cy.get(field).select(value)
 })
 
+Cypress.Commands.add('HandleSuccessAlert',()=>{
+    cy.on('window:alert', message => {
+        expect(['Customer added successfully with customer id :6', 'Account created successfully with account Number :1016'])
+            .to.contains(message)
+    })
+})
+

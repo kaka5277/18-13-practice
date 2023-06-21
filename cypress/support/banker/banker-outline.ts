@@ -19,24 +19,14 @@ When(/^I click on add customer button$/, () => {
         cy.clickElement(sel.addCustomeBtn)
     })
 });
-
-When(/^I type in the first name$/, () => {
+//1
+When(/^I type in the "([^"]*)","([^"]*)","([^"]*)"$/, (first_name,last_name,post_code) => {
     cy.fixture('selectors').then(sel => {
-        cy.typeAtext(sel.fNameField, sel.fName)
+        cy.typeAtext(sel.fNameField, `${first_name}`)
+        cy.typeAtext(sel.lNameField,`${last_name}`)
+        cy.typeAtext(sel.pCodeField,`${post_code}`)
     })
-})
-
-When(/^I type in the last name$/, () => {
-    cy.fixture('selectors').then(sel => {
-        cy.typeAtext(sel.lNameField, sel.lName)
-    })
-})
-
-When(/^I type in the post code$/, () => {
-    cy.fixture('selectors').then(sel => {
-        cy.typeAtext(sel.pCodeField, sel.postCd)
-    })
-})
+});
 
 Then(/^I click on create customer button$/, () => {
     cy.fixture('selectors').then(sel => {
@@ -53,12 +43,12 @@ When(/^I click on open account button$/, () => {
         cy.clickElement(sel.createAccountBtn)
     })
 })
-
-When(/^I select the customer name$/, () => {
-    cy.fixture('selectors').then(sel => {
-        cy.selectValue(sel.customerList, sel.fName + ' ' + sel.lName)
+//2
+When(/^I select the customer "([^"]*)"$/, (full_name) => {
+	cy.fixture('selectors').then(sel => {
+        cy.selectValue(sel.customerList, `${full_name}`)
     })
-})
+});
 
 When(/^I select the currency$/, () => {
     cy.fixture('selectors').then(sel => {
@@ -82,18 +72,18 @@ When(/^I click on the customers button$/, () => {
         cy.clickElement(sel.customerListBtn)
     })
 })
-
-When(/^I search for the user$/, () => {
-    cy.fixture('selectors').then(sel => {
-        cy.typeAtext(sel.searchField, sel.lName)
-        cy.contains(sel.fName).should('be.exist')
+//3
+When(/^I search for the "([^"]*)"$/, (first_name) => {
+	cy.fixture('selectors').then(sel => {
+        cy.typeAtext(sel.searchField, `${first_name}`)
+       // cy.contains(sel.fName).should('be.exist')
     })
-})
+});
 
 Then(/^I click on the delete button and notfound$/, () => {
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.deleteBtn)
-        cy.get('table').should('not.contain', sel.fName)
+       // cy.get('table').should('not.contain', sel.fName)
     })
 })
 

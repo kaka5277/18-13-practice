@@ -90,7 +90,7 @@ When(/^I search for the user$/, () => {
     })
 })
 
-Then(/^I click on the delete button$/, () => {
+Then(/^I click on the delete button and notfound$/, () => {
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.deleteBtn)
         cy.get('table').should('not.contain', sel.fName)

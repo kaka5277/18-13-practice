@@ -21,5 +21,5 @@ delete an account
 
         When I click on the customers button
         And  I search for the user
-        Then I click on the delete button
+        Then I click on the delete button and notfound
         

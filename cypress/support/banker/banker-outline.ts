@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor"
 
-let msg
+let msg;
 
 Given(/^I am on the bank app$/, () => {
     cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')

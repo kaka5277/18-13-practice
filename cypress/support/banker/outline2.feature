@@ -10,10 +10,20 @@ Feature: Banker Journey
         And I type in the "<first_name>", "<last_name>", "<post_code>"
         Then I click on create customer button
         Then I should see profile alert
-  
+
+        When I click on open account button
+        And I select the customer "<full_name>"
+        And I select the currency
+        And I click on the process button
+        Then I should see the account number
+
+        When I click on the customers button
+        And I search for the "<first_name>"
+        Then I click on the delete button
+
         Examples:
-            | first_name | last_name | post_code | 
-            | Aohn       | McAnthony | AD05 OHT  | 
-            | Bane       | Doe       | BL3 7QS   | 
-            | Cary       | Poppins   | CL1 8BR   |
+            | first_name | last_name | post_code | full_name      |
+            | Aohn       | McAnthony | AD05 OHT  | Aohn McAnthony |
+            | Bane       | Doe       | BL3 7QS   | Bane Doe       |
+            | Cary       | Poppins   | CL1 8BR   | Cary Poppins   |
 

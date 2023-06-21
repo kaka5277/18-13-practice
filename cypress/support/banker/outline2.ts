@@ -41,6 +41,51 @@ Then(/^I should see profile alert$/, () => {
     cy.HandleSuccessAlert(msg,'Customer added successfully with customer id :6')
 });
 
+When(/^I click on open account button$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.createAccountBtn)
+    })
+});
+
+When(/^I select the customer "([^"]*)"$/, (full_name) => {
+	 cy.fixture('selectors').then(sel=>{
+        cy.selectValue(sel.customerList,`${full_name}`)
+     })
+});
+
+When(/^I select the currency$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.selectValue(sel.currencyList,sel.currency)
+    })
+});
+
+When(/^I click on the process button$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.CreateBtn)
+    })
+});
+
+Then(/^I should see the account number$/, () => {
+    cy.HandleSuccessAlert(msg,'Account created successfully with account Number :1016')
+});
+
+When(/^I click on the customers button$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.customerListBtn)
+    })
+});
+
+When(/^I search for the "([^"]*)"$/, (first_name) => {
+	cy.fixture('selectors').then(sel=>{
+        cy.typeAtext(sel.searchField,`${first_name}`)
+    })
+});
+
+Then(/^I click on the delete button$/, () => {
+	cy.fixture('selectors').then(sel=>{
+        cy.clickElement(sel.deleteBtn)
+    })
+});
 
 
 

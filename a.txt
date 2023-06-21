@@ -48,4 +48,5 @@ Then(/^I should see an alert2$/, () => {
     cy.HandleSuccessAlert('Account created successfully with account Number :1016')
 });
 参考第14集:配置stub,HandleSuccessAlert函数(stub,message)..ts函数内,分2个调用alert text
+增加了.github>workflows>.yml.实现用Github actions ci/cd
 远程删除了.DS_Store

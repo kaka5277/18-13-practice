@@ -51,3 +51,15 @@ Then(/^I should see an alert2$/, () => {
 增加了.github>workflows>.yml.实现用Github actions ci/cd
 远程删除了.DS_Store
 15:cypress运行的时候，左侧是显示3个Senarioa.，也证明了每次加入数据，是重新刷新。outline有3行数据，但每次重新刷新，不会累加。
+加了table 数据
+ Then I should see the following buttons
+            | buttonName   |
+            | Add Customer |
+            | Open Account |
+            | Customers    |
+
+Then(/^I should see the following buttons$/, (datatable) => {
+    datatable.hashes().forEach(row => {
+        cy.contains(row.buttonName).should('exist').should('contain',row.buttonName)
+    });
+});

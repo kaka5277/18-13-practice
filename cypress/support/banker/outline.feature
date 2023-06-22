@@ -6,6 +6,11 @@ Feature: Banker Journey
     Scenario Outline: A Banker shoule be able to create and add an account number then delete the account holder profile
         Given I am on the bank app
         When I click on the bank login button
+        Then I should see the following buttons
+            | buttonName   |
+            | Add Customer |
+            | Open Account |
+            | Customers    |
         And I click on add customer button
         And I type in the "<first_name>", "<last_name>", "<post_code>"
         Then I click on create customer button

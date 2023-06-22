@@ -1,5 +1,6 @@
-//?L23中，每输入一遍name后，点提交按钮，为什么只有最后一次输入的才插入表格,插入的数据不会累加。手工测试该网页可以累加
-import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+//?每输入一遍name后，点提交按钮，为什么只有最后一次输入的才插入表格,插入的数据不会累加。
+//手工测试该网页可以累加.页面用了local storage,cypress运行3次scenario
+import { Given, When, Then, DataTable } from "@badeball/cypress-cucumber-preprocessor";
 
 let msg;
 Given(/^I am on the bank app$/, () => {
@@ -11,6 +12,13 @@ When(/^I click on the bank login button$/, () => {
     cy.fixture('selectors').then(sel => {
         cy.clickElement(sel.mangerLogin)
     })
+});
+
+Then(/^I should see the following buttons$/, (datatable) => {
+    datatable.hashes().forEach(row => {
+        cy.contains(row.buttonName).should('exist')
+        //.should('contain',row.buttonName)
+    });
 });
 
 When(/^I click on add customer button$/, () => {
@@ -86,8 +94,5 @@ Then(/^I click on the delete button$/, () => {
         cy.clickElement(sel.deleteBtn)
     })
 });
-
-
-
 
 

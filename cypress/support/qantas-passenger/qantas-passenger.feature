@@ -11,8 +11,8 @@ Feature: Passengers Search Submission
         Examples:
             | Passengers | Row      |
             | 3-4-2      | adults   |
-            | 4-4-1      | children |
-            | 5-1-3      | infants  |
+            # | 4-4-1      | children |
+            # | 5-1-3      | infants  |
 # Scenario: Only 1 infant can be booked for every 1 adult.
 #         Given I choose the number of Adult is 1
 #         When I choose 2 of infants

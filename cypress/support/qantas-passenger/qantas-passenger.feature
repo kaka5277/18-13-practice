@@ -23,3 +23,22 @@ Feature: Passengers Search Submission
             | Passengers | Row     |
             | 1-0-1      | infants |
 
+    Scenario Outline: Number of passengers cannot be less than 1
+        Given I select passengers as "<Passengers>"
+        When I click '-' button in "<Row>"
+        Then I should see empty passengers number error message
+
+        Examples:
+            | Passengers | Row    |
+            | 1-0-0      | adults |
+
+    Scenario Outline: International flights do not allow booking without adults
+        When I select airports as "<Airports>"
+        Given I select passengers as "<Passengers>"
+        When I click '-' button in "<Row>"
+        Then the number still be 1,not 0
+        Then I should see 'children travelling alone' error message
+
+        Examples:
+            | Airports | Passengers | Row    |
+            | SIN-MEL  | 1-1-0      | adults |

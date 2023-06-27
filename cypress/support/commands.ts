@@ -49,7 +49,7 @@ Cypress.Commands.add('typeAtext', (field, text) => {
 })
 
 Cypress.Commands.add('passenger_select',(element,number)=>{
-    cy.get(element).clear().type(number)
+    cy.get(element).clear().type(number,{ force: true })
 })
 
 Cypress.Commands.add('selectValue',(field,value)=>{

@@ -6,7 +6,7 @@ Given(/^I am on the flight search page$/, () => {
 
 Given("I select passengers as {string}", (passengers:string) => {
       const n=passengers.split('-')
-      cy.scrollTo(0,500)
+      cy.scrollTo(0,300)
       cy.clickElement('.css-tpxo3f-runway-popup-field__button')
       cy.passenger_select('input#adults',`${n[0]}`)
       cy.passenger_select('input#children',`${n[1]}`)

@@ -49,7 +49,8 @@ Cypress.Commands.add('typeAtext', (field, text) => {
 })
 
 Cypress.Commands.add('passenger_select',(element,number)=>{
-    cy.get(element).focus().clear().invoke('val', number).type(number,{ force: true })
+    //invoke:不会清空：cy.get(element).focus().clear().invoke('val', number).type(number,{ force: true })
+    cy.get(element).focus().clear().type(number,{ force: true })
 })
 
 Cypress.Commands.add('selectValue',(field,value)=>{

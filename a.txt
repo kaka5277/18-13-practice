@@ -1,4 +1,4 @@
-cucumber+ts+cypress 练习:
+cucumber+ts+cypress 练习: github actions 
 .feature,.ts都是support文件夹下
 banker-login练习:用到fixture,自定义commands.add,stub,alert message,declare
 功能:Manager login->分别点击3个功能：add customer info->create account:生成Account number->search 用户列表->删除：断言：不存在该用户

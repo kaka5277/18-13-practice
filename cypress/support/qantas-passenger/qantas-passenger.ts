@@ -6,7 +6,7 @@ Given(/^I am on the flight search page$/, () => {
 
 Given("I select passengers as {string}", (passengers:string) => {
       const n=passengers.split('-')
-      cy.clickElement('.css-tpxo3f-runway-popup-field__button')
+      cy.clickElement('[data-testid=passengers] button')
       cy.passenger_select('input#adults',`${n[0]}`)
       cy.passenger_select('input#children',`${n[1]}`)
       cy.passenger_select('input#infants',`${n[2]}`)

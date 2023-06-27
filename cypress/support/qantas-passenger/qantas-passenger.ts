@@ -16,6 +16,10 @@ When("I click '+' button in {string}", (row) => {
 	  cy.clickElement(`[data-testid=${row}] [aria-label="Increase Value"]`)
 })
 
-Then(/^I should see alert$/, () => {
+Then(/^I should see max-number error message$/, () => {
 	  cy.contains('Only 9 passengers can be booked at a time.')
 })
+
+Then(/^I should see adult-infants number error message$/, () => {
+    cy.contains('Only 1 infant can be booked for every 1 adult online.')
+});

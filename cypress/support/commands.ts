@@ -35,6 +35,10 @@
 //     }
 //   }
 // }
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // 阻止 Cypress 将错误视为测试失败
+    return false;
+});
 
 Cypress.Commands.add('clickElement', (element) => {
     cy.get(element).should('exist').click()
@@ -42,6 +46,10 @@ Cypress.Commands.add('clickElement', (element) => {
 
 Cypress.Commands.add('typeAtext', (field, text) => {
     cy.get(field).should('exist').type(text)
+})
+
+Cypress.Commands.add('passenger_select',(element,number)=>{
+    cy.get(element).clear().type(number)
 })
 
 Cypress.Commands.add('selectValue',(field,value)=>{

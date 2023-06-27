@@ -27,6 +27,7 @@ declare global {
             typeAtext(field: string, text: string): Chainable<void>
             selectValue(field: string, value: string): Chainable<void>
             HandleSuccessAlert(stub:void,message:string): Chainable<void>
+            passenger_select(element:string,number:any): Chainable<void>
         }
     }
 }

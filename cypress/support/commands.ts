@@ -41,7 +41,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 });
 
 Cypress.Commands.add('clickElement', (element) => {
-    cy.get(element).should('exist').click()
+    cy.get(element).should('exist').click({force:true})
 })
 
 Cypress.Commands.add('typeAtext', (field, text) => {
